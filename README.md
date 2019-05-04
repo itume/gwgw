@@ -21,3 +21,5 @@ Start
 Stop
 
     docker-compose down
+
+Open http://localhost:3000/
