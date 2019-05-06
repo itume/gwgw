@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Food Business Permits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Office</th>
+      <th>Representator</th>
+      <th>Business type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_business_permits.each do |food_business_permit| %>
+      <tr>
+        <td><%= food_business_permit.office %></td>
+        <td><%= food_business_permit.representator %></td>
+        <td><%= food_business_permit.business_type %></td>
+        <td><%= link_to 'Show', food_business_permit %></td>
+        <td><%= link_to 'Edit', edit_food_business_permit_path(food_business_permit) %></td>
+        <td><%= link_to 'Destroy', food_business_permit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Food Business Permit', new_food_business_permit_path %>

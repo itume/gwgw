@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  office: one
+  representator: one
+  business_type: one
+
+two:
+  office: two
+  representator: two
+  business_type: two

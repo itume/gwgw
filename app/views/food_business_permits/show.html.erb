@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Office:</strong>
+  <%= @food_business_permit.office %>
+</p>
+
+<p>
+  <strong>Representator:</strong>
+  <%= @food_business_permit.representator %>
+</p>
+
+<p>
+  <strong>Business type:</strong>
+  <%= @food_business_permit.business_type %>
+</p>
+
+<%= link_to 'Edit', edit_food_business_permit_path(@food_business_permit) %> |
+<%= link_to 'Back', food_business_permits_path %>

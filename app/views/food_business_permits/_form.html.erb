@@ -1,0 +1,32 @@
+<%= form_with(model: food_business_permit, local: true) do |form| %>
+  <% if food_business_permit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(food_business_permit.errors.count, "error") %> prohibited this food_business_permit from being saved:</h2>
+
+      <ul>
+      <% food_business_permit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :office_id %>
+    <%= form.text_field :office_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :representator_id %>
+    <%= form.text_field :representator_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_type_id %>
+    <%= form.text_field :business_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
