@@ -18,8 +18,16 @@ Start
 
     docker-compose up
 
+Open http://localhost:3000/
+
+
+## operation
+
 Stop
 
     docker-compose down
 
-Open http://localhost:3000/
+attach container
+
+    docker exec -it #{container_name} bash
+
