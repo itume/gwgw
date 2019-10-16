@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
@@ -11,6 +11,7 @@ services:
       - 3000:3000
     depends_on:
       - db
+      - elasticsearch
     tty: true
     stdin_open: true
   db:
@@ -19,5 +20,18 @@ services:
       - db-volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: ./es/Dockerfile
+
+  kibana:
+    image: kibana:7.3.2
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+
 volumes:
   db-volume:
